@@ -7,7 +7,7 @@
     "dev": "concurrently -n api,web -c blue,magenta \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "nodemon --watch server server/dev.js",
     "dev:web": "npm --prefix client start",
-    "build": "npm --prefix client install && npm --prefix client run build",
+    "build": "npm --prefix client install --include=dev && npm --prefix client run build",
     "seed": "node server/seed/cli.js",
     "seed:reset": "node server/seed/cli.js --reset",
     "test": "node --test --test-concurrency=1 \"server/tests/*.test.js\""
